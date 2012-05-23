@@ -15,7 +15,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
         \ 'github:groenewege/vim-less'
         \ ],
       \ 'gui':
-        \ [ 'ctrlp' ],
+        \ [ 'github:kien/ctrlp.vim' ],
       \ 'puppet':
         \ [ 'github:netdata/vim-puppet' ],
   \ }
