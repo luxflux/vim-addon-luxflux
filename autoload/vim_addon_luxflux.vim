@@ -11,7 +11,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
         \ [ 'cucumber', 'bundler' ],
       \ 'gui':
         \ [ 'ctrlp' ],
-  }
+  \ }
 
   let activate = []
   for [k,v] in items(plugins)
