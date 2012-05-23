@@ -5,7 +5,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
   let plugins = {
       \ 'always':
         \ [
-          \ 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'snipmate', 'snipmate-snippets', 'fugitive', 'gitolite',
+          \ 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'snipmate-snippets', 'fugitive', 'gitolite',
           \ 'github:vim-ruby/vim-ruby',
           \ ],
       \ 'rails':
