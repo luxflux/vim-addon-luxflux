@@ -23,4 +23,4 @@ fun! vim_addon_luxflux#Activate(vam_features)
   endfor
 
   call vam#ActivateAddons(activate,{'auto_install':1})
-
+endfunction
