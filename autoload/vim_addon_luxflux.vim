@@ -5,17 +5,19 @@ fun! vim_addon_luxflux#Activate(vam_features)
   let plugins = {
       \ 'always':
         \ [
-          \ 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'snipmate'
+          \ 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'snipmate', 'snipmate-snippets', 'fugitive', 'gitolite',
+          \ 'github:vim-ruby/vim-ruby',
           \ ],
       \ 'rails':
         \ [
-        \ 'cucumber', 'bundler', 'Haml', 'javascript', 'markdown', 'rails', 'ruby',
-        \ 'coffee-script', 'commentary'
+        \ 'bundler', 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'rails', 
+        \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber',
+        \ 'github:groenewege/vim-less'
         \ ],
       \ 'gui':
         \ [ 'ctrlp' ],
       \ 'puppet':
-        \ [ 'puppet' ],
+        \ [ 'github:netdata/vim-puppet' ],
   \ }
 
   let activate = []
@@ -29,5 +31,5 @@ fun! vim_addon_luxflux#Activate(vam_features)
 
   call vam#ActivateAddons(activate,{'auto_install':1})
 
-  color molokai
+  color herald
 endfunction
