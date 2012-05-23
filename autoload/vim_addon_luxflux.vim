@@ -10,7 +10,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
           \ ],
       \ 'rails':
         \ [
-        \ 'bundler', 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'rails', 
+        \ 'bundler', 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber',
         \ 'github:groenewege/vim-less'
         \ ],
