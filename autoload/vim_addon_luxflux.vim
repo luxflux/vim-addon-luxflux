@@ -162,7 +162,6 @@ fun! vim_addon_luxflux#Activate(vam_features)
   iab REFS <C-R>=GitRedmineIssue('false')<CR>
   iab FIXES <C-R>=GitRedmineIssue('true')<CR>
 
-  autocmd BufWritePre * :call <SID>FixWhitespace()
-
+  autocmd BufWritePre * :FixWhitespace
 
 endfunction
