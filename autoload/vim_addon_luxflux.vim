@@ -17,7 +17,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
       \ 'gui':
         \ [ 'github:kien/ctrlp.vim' ],
       \ 'puppet':
-        \ [ 'github:netdata/vim-puppet' ],
+        \ [ 'github:netdata/vim-puppet', 'github:godlygeek/tabular' ],
   \ }
 
   let activate = []
