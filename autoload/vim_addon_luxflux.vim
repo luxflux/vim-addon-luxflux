@@ -5,7 +5,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
   let plugins = {
       \ 'always':
         \ [
-          \ 'snipmate', 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
+          \ 'snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
           \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab'
           \ ],
       \ 'rails':
@@ -31,7 +31,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
 
   call vam#ActivateAddons(activate,{'auto_install':1})
 
-  color herald
+  color molokai
 
   syntax enable
   set encoding=utf-8
