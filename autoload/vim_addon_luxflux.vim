@@ -106,16 +106,6 @@ fun! vim_addon_luxflux#Activate(vam_features)
   " set indenting for puppet files
   autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
-  " snipmate configuration
-  let g:snipMate = { 'scope_aliases' :
-    \ { 'xhtml': 'html'
-    \ , 'html': 'javascript'
-	  \ , 'php': 'php,html,javascript'
-	  \ , 'ur': 'html,javascript'
-	  \ , 'mxml': 'actionscript'
-	  \ , 'haml': 'ruby,html,javascript'
-	  \ }}
-
   if has("statusline") && !&cp
     set laststatus=2  " always show the status bar
 
