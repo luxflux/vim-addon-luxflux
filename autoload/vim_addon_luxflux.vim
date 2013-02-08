@@ -7,7 +7,7 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab', 'github:skwp/vim-powerline',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
-        \ 'github:kien/ctrlp.vim', 'github:netdata/vim-puppet', 'github:godlygeek/tabular'
+        \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -54,6 +54,10 @@ fun! vim_addon_luxflux#Activate()
 
   " provide some context when editing
   set scrolloff=3
+
+  " syntastic
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_error_symbol='✗'
 
   " don't use Ex mode, use Q for formatting
   map Q gq
