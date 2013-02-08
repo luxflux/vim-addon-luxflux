@@ -6,7 +6,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
       \ 'always':
         \ [
           \ 'snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
-          \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab'
+          \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab', 'github:skwp/vim-powerline'
           \ ],
       \ 'rails':
         \ [
@@ -42,6 +42,9 @@ fun! vim_addon_luxflux#Activate(vam_features)
   set cursorline
   set showcmd     " display incomplete commands
   set shell=bash  " avoids munging PATH under zsh
+  let g:is_bash=1
+
+  set guifont=Source_Code_Pro:h14,Source_Code_Pro:h12
 
   " Allow backgrounding buffers without writing them, and remember marks/undo
   " for backgrounded buffers
@@ -94,6 +97,7 @@ fun! vim_addon_luxflux#Activate(vam_features)
   map <Up>    :echo "no!"<cr>
   map <Down>  :echo "no!"<cr>
 
+  silent !mkdir -p ~/.vim/_backup ~/.vim/_temp
   set backupdir=~/.vim/_backup    " where to put backup files.
   set directory=~/.vim/_temp      " where to put swap files.
 
@@ -106,21 +110,9 @@ fun! vim_addon_luxflux#Activate(vam_features)
   " set indenting for puppet files
   autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
-  if has("statusline") && !&cp
-    set laststatus=2  " always show the status bar
-
-    " Start the status line
-    set statusline=%f\ %m\ %r
-
-    " Add fugitive
-    set statusline+=%{fugitive#statusline()}
-
-    " Finish the statusline
-    set statusline+=Line:%l/%L[%p%%]
-    set statusline+=Col:%v
-    set statusline+=Buf:#%n
-    set statusline+=[%b][0x%B]
-  endif
+  " fancy powerline symbols
+  let g:Powerline_symbols = 'fancy'
+  set laststatus=2
 
   if has("autocmd")
 
