@@ -5,12 +5,12 @@ fun! vim_addon_luxflux#Activate(vam_features)
   let plugins = {
       \ 'always':
         \ [
-          \ 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'snipmate-snippets', 'fugitive', 'gitolite',
+          \ 'Syntastic', 'herald', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
           \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab'
           \ ],
       \ 'rails':
         \ [
-        \ 'bundler', 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
+        \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber',
         \ 'github:groenewege/vim-less'
         \ ],
