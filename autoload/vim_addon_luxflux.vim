@@ -7,7 +7,8 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab', 'github:skwp/vim-powerline',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
-        \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet'
+        \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
+        \ 'github:rson/vim-conque'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -98,6 +99,18 @@ fun! vim_addon_luxflux#Activate()
   " fancy powerline symbols
   let g:Powerline_symbols = 'fancy'
   set laststatus=2
+
+  " ctrlp configuration
+  nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+
+  " conqueterm configuration
+  let g:ConqueTerm_InsertOnEnter = 0
+  let g:ConqueTerm_CWInsert = 1
+  let g:ConqueTerm_Color = 2
+  let g:ConqueTerm_ReadUnfocused = 1
+
+  nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
+  nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
 
   if has("autocmd")
 
