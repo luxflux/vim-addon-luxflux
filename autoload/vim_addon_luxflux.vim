@@ -8,7 +8,7 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
-        \ 'github:rson/vim-conque'
+        \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -59,6 +59,7 @@ fun! vim_addon_luxflux#Activate()
   " syntastic
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_error_symbol='✗'
+  let g:syntastic_auto_loc_list=1
 
   " don't use Ex mode, use Q for formatting
   map Q gq
@@ -111,6 +112,9 @@ fun! vim_addon_luxflux#Activate()
 
   nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
   nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
+
+  " neocomplcache configuration
+  let g:neocomplcache_enable_at_startup = 1
 
   if has("autocmd")
 
