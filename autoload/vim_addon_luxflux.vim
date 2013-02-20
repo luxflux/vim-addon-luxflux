@@ -116,6 +116,11 @@ fun! vim_addon_luxflux#Activate()
   " neocomplcache configuration
   let g:neocomplcache_enable_at_startup = 1
 
+  " git diff plugin
+  let g:git_diff_added_symbol='⇒'
+  let g:git_diff_removed_symbol='⇐'
+  let g:git_diff_changed_symbol='⇔'
+
   if has("autocmd")
 
     function s:setupWrapping()
