@@ -8,7 +8,7 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'Markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
-        \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache', 'github:luxflux/vim-git-inline-diff'
+        \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -136,6 +136,37 @@ fun! vim_addon_luxflux#Activate()
   set wildignore+=log/**
   set wildignore+=tmp/**
   set wildignore+=*.png,*.jpg,*.gif
+
+  " surrounding
+  map ,# ysiw#
+  vmap ,# c#{<C-R>"}<ESC>
+
+  " ," Surround a word with "quotes"
+  map ," ysiw"
+  vmap ," c"<C-R>""<ESC>
+
+  " ,' Surround a word with 'single quotes'
+  map ,' ysiw'
+  vmap ,' c'<C-R>"'<ESC>
+
+  " ,) or ,( Surround a word with (parens)
+  " The difference is in whether a space is put in
+  map ,( ysiw(
+  map ,) ysiw)
+  vmap ,( c( <C-R>" )<ESC>
+  vmap ,) c(<C-R>")<ESC>
+
+  " ,[ Surround a word with [brackets]
+  map ,] ysiw]
+  map ,[ ysiw[
+  vmap ,[ c[ <C-R>" ]<ESC>
+  vmap ,] c[<C-R>"]<ESC>
+
+  " ,{ Surround a word with {braces}
+  map ,} ysiw}
+  map ,{ ysiw{
+  vmap ,} c{ <C-R>" }<ESC>
+  vmap ,{ c{<C-R>"}<ESC>
 
   if has("autocmd")
 
