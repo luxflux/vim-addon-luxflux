@@ -28,6 +28,9 @@ fun! vim_addon_luxflux#Activate()
 
   set guifont=Source_Code_Pro:h14,Source_Code_Pro:h12
 
+  set autoread
+  set history=1000
+
   " Allow backgrounding buffers without writing them, and remember marks/undo
   " for backgrounded buffers
   set hidden
@@ -120,6 +123,19 @@ fun! vim_addon_luxflux#Activate()
   let g:git_diff_added_symbol='⇒'
   let g:git_diff_removed_symbol='⇐'
   let g:git_diff_changed_symbol='⇔'
+
+  " completion
+  set wildmode=list:longest
+  set wildmenu
+  set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+  set wildignore+=*sass-cache*
+  set wildignore+=*DS_Store*
+  set wildignore+=vendor/rails/**
+  set wildignore+=vendor/cache/**
+  set wildignore+=*.gem
+  set wildignore+=log/**
+  set wildignore+=tmp/**
+  set wildignore+=*.png,*.jpg,*.gif
 
   if has("autocmd")
 
