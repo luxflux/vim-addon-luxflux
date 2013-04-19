@@ -5,7 +5,7 @@ fun! vim_addon_luxflux#Activate()
   let plugins = [
         \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
         \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab', 'github:skwp/vim-powerline',
-        \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:hallison/vim-markdown', 'github:tpope/vim-rails',
+        \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
         \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
