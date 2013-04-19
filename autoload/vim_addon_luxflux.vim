@@ -9,7 +9,7 @@ fun! vim_addon_luxflux#Activate()
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
         \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
-        \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate'
+        \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate', 'github:wting/rust.vim'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
