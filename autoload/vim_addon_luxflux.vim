@@ -32,6 +32,8 @@ fun! vim_addon_luxflux#Activate()
   set autoread
   set history=1000
 
+  set noballooneval
+
   " Allow backgrounding buffers without writing them, and remember marks/undo
   " for backgrounded buffers
   set hidden
