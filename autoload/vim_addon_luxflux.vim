@@ -33,7 +33,9 @@ fun! vim_addon_luxflux#Activate()
   set autoread
   set history=1000
 
-  set noballooneval
+  if has("gui_macvim")
+    set noballooneval
+  endif
 
   " Allow backgrounding buffers without writing them, and remember marks/undo
   " for backgrounded buffers
