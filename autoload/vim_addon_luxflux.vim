@@ -4,13 +4,13 @@ fun! vim_addon_luxflux#Activate()
 
   let plugins = [
         \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
-        \ 'github:vim-ruby/vim-ruby', 'github:ervandew/supertab', 'github:skwp/vim-powerline',
+        \ 'github:vim-ruby/vim-ruby', 'github:skwp/vim-powerline',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
-        \ 'github:rson/vim-conque', 'github:Shougo/neocomplcache', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
+        \ 'github:rson/vim-conque', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
         \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate', 'github:wting/rust.vim', 'github:Floobits/floobits-vim',
-        \ 'github:jamessan/vim-gnupg'
+        \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -122,8 +122,9 @@ fun! vim_addon_luxflux#Activate()
   nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
   nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
 
-  " neocomplcache configuration
-  let g:neocomplcache_enable_at_startup = 1
+  " completion configuration
+  let g:ycm_complete_in_comments = 1
+  let g:ycm_complete_in_comments = 1
 
   " git diff plugin
   let g:git_diff_added_symbol='⇒'
