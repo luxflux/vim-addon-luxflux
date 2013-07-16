@@ -4,7 +4,7 @@ fun! vim_addon_luxflux#Activate()
 
   let plugins = [
         \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
-        \ 'github:vim-ruby/vim-ruby', 'github:skwp/vim-powerline',
+        \ 'github:vim-ruby/vim-ruby', 'github:bling/vim-airline',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
@@ -28,7 +28,7 @@ fun! vim_addon_luxflux#Activate()
   set shell=bash  " avoids munging PATH under zsh
   let g:is_bash=1
 
-  set guifont=Source_Code_Pro:h14,Source_Code_Pro:h12
+  set guifont=Source_Code_Pro_for_Powerline:h14,Source_Code_Pro_for_Powerline:h12
 
   set autoread
   set history=1000
@@ -107,7 +107,7 @@ fun! vim_addon_luxflux#Activate()
   autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
   " fancy powerline symbols
-  let g:Powerline_symbols = 'fancy'
+  let g:airline_powerline_fonts = 1
   set laststatus=2
 
   " ctrlp configuration
