@@ -4,7 +4,7 @@ fun! vim_addon_luxflux#Activate()
 
   let plugins = [
         \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
-        \ 'github:vim-ruby/vim-ruby', 'github:bling/vim-airline',
+        \ 'github:vim-ruby/vim-ruby', 'github:bling/vim-airline', 'github:cespare/vim-toml',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
