@@ -10,7 +10,8 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
         \ 'github:rson/vim-conque', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
         \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate', 'github:wting/rust.vim', 'github:Floobits/floobits-vim',
-        \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe'
+        \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe',
+        \ 'github:scrooloose/nerdtree', 'github:fholgado/minibufexpl.vim'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -175,27 +176,16 @@ fun! vim_addon_luxflux#Activate()
   vmap ,} c{ <C-R>" }<ESC>
   vmap ,{ c{<C-R>"}<ESC>
 
-  " Tab switching for macvim
-  if has("gui_macvim")
-    " In MacVim, you can have multiple tabs open. This mapping makes Ctrl-Tab
-    " switch between them, like browser tabs. Ctrl-Shift-Tab goes the other
-    " way.
-    noremap <C-Tab> :tabnext<CR>
-    noremap <C-S-Tab> :tabprev<CR>
-
-    " Switch to specific tab numbers with Command-number
-    noremap <D-1> :tabn 1<CR>
-    noremap <D-2> :tabn 2<CR>
-    noremap <D-3> :tabn 3<CR>
-    noremap <D-4> :tabn 4<CR>
-    noremap <D-5> :tabn 5<CR>
-    noremap <D-6> :tabn 6<CR>
-    noremap <D-7> :tabn 7<CR>
-    noremap <D-8> :tabn 8<CR>
-    noremap <D-9> :tabn 9<CR>
-    " Command-0 goes to the last tab
-    noremap <D-0> :tablast<CR>
-  endif
+  " Switch to specific tab numbers with Command-number
+  noremap <D-1> :buffer 1<CR>
+  noremap <D-2> :buffer 2<CR>
+  noremap <D-3> :buffer 3<CR>
+  noremap <D-4> :buffer 4<CR>
+  noremap <D-5> :buffer 5<CR>
+  noremap <D-6> :buffer 6<CR>
+  noremap <D-7> :buffer 7<CR>
+  noremap <D-8> :buffer 8<CR>
+  noremap <D-9> :buffer 9<CR>
 
   if has("autocmd")
 
@@ -238,5 +228,9 @@ fun! vim_addon_luxflux#Activate()
   iab FIXES <C-R>=GitRedmineIssue('true')<CR>
 
   autocmd BufWritePre * :FixWhitespace
+
+  " NERDTree
+  autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 endfunction
