@@ -230,7 +230,9 @@ fun! vim_addon_luxflux#Activate()
   autocmd BufWritePre * :FixWhitespace
 
   " NERDTree
-  autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+  if has("gui_running")
+    autocmd VimEnter * NERDTree
+  endif
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 endfunction
