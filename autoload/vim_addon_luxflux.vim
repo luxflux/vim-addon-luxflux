@@ -7,11 +7,12 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:vim-ruby/vim-ruby', 'github:bling/vim-airline', 'github:cespare/vim-toml',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
-        \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet', 'github:skwp/vim-ruby-conque',
-        \ 'github:rson/vim-conque', 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
+        \ 'github:kien/ctrlp.vim', 'github:godlygeek/tabular', 'github:netdata/vim-puppet',
+        \ 'github:luxflux/vim-git-inline-diff', 'github:tpope/vim-surround',
         \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate', 'github:wting/rust.vim', 'github:Floobits/floobits-vim',
         \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe',
-        \ 'github:scrooloose/nerdtree', 'github:fholgado/minibufexpl.vim'
+        \ 'github:fholgado/minibufexpl.vim',
+        \ 'github:thoughtbot/vim-rspec', 'github:tpope/vim-dispatch'
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -114,14 +115,10 @@ fun! vim_addon_luxflux#Activate()
   " ctrlp configuration
   nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 
-  " conqueterm configuration
-  let g:ConqueTerm_InsertOnEnter = 0
-  let g:ConqueTerm_CWInsert = 1
-  let g:ConqueTerm_Color = 2
-  let g:ConqueTerm_ReadUnfocused = 1
-
-  nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
-  nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
+  " vim-rspec configuration
+  nmap <silent> <D-R> :call RunCurrentSpecFile()<CR>
+  nmap <silent> <D-L> :call RunNearestSpec()<CR>
+  let g:rspec_command = "Dispatch rspec {spec}"
 
   " completion configuration
   let g:ycm_complete_in_comments = 1
@@ -228,11 +225,5 @@ fun! vim_addon_luxflux#Activate()
   iab FIXES <C-R>=GitRedmineIssue('true')<CR>
 
   autocmd BufWritePre * :FixWhitespace
-
-  " NERDTree
-  if has("gui_running")
-    autocmd VimEnter * NERDTree
-  endif
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 endfunction
