@@ -12,7 +12,7 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:docunext/closetag.vim', 'github:Raimondi/delimitMate', 'github:wting/rust.vim', 'github:Floobits/floobits-vim',
         \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe',
         \ 'github:fholgado/minibufexpl.vim',
-        \ 'github:thoughtbot/vim-rspec', 'github:tpope/vim-dispatch'
+        \ 'github:thoughtbot/vim-rspec', 'github:tpope/vim-dispatch',
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -113,7 +113,8 @@ fun! vim_addon_luxflux#Activate()
   set laststatus=2
 
   " ctrlp configuration
-  nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+  "nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+  nnoremap <silent> P :ClearCtrlPCache<cr>
 
   " vim-rspec configuration
   nmap <silent> <D-R> :call RunCurrentSpecFile()<CR>
