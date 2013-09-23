@@ -3,7 +3,7 @@ fun! vim_addon_luxflux#Activate()
   let g:linux=1
 
   let plugins = [
-        \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite',
+        \ 'github:garbas/vim-snipmate', 'Syntastic', 'molokai', 'endwise', 'trailing-whitespace', 'fugitive', 'gitolite', 'github:chriskempson/vim-tomorrow-theme',
         \ 'github:vim-ruby/vim-ruby', 'github:bling/vim-airline', 'github:cespare/vim-toml',
         \ 'github:chriseppstein/vim-haml', 'github:pangloss/vim-javascript', 'github:plasticboy/vim-markdown', 'github:tpope/vim-rails',
         \ 'commentary', 'github:kchmck/vim-coffee-script', 'github:tpope/vim-cucumber', 'github:groenewege/vim-less',
@@ -17,7 +17,8 @@ fun! vim_addon_luxflux#Activate()
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
 
-  color molokai
+  "color molokai
+  color Tomorrow-Night-Eighties
 
   syntax enable
   set encoding=utf-8
