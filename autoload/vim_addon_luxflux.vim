@@ -13,6 +13,9 @@ fun! vim_addon_luxflux#Activate()
         \ 'github:jamessan/vim-gnupg', 'github:Valloric/YouCompleteMe',
         \ 'github:fholgado/minibufexpl.vim',
         \ 'github:thoughtbot/vim-rspec', 'github:tpope/vim-dispatch',
+        \ 'github:Lokaltog/vim-easymotion',
+        \ 'github:xolox/vim-easytags', 'github:majutsushi/tagbar',
+        \ 'github:vim-scripts/bufkill.vim',
         \ ]
 
   call vam#ActivateAddons(plugins,{'auto_install':1})
@@ -96,9 +99,15 @@ fun! vim_addon_luxflux#Activate()
   map <Up>    :echo "no!"<cr>
   map <Down>  :echo "no!"<cr>
 
-  silent !mkdir -p ~/.vim/_backup ~/.vim/_temp
+  silent !mkdir -p ~/.vim/_backup ~/.vim/_temp ~/.vim/_undo
   set backupdir=~/.vim/_backup    " where to put backup files.
   set directory=~/.vim/_temp      " where to put swap files.
+  set undodir=~/.vim/_undo     " where to save undo histories
+
+  " undo history
+  set undofile
+  set undolevels=1000         " How many undos
+  set undoreload=10000        " number of lines to save for undo
 
   " paste mode toggle
   set pastetoggle=<f4>
@@ -116,11 +125,14 @@ fun! vim_addon_luxflux#Activate()
   " ctrlp configuration
   "nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
   nnoremap <silent> P :ClearCtrlPCache<cr>
+  let g:ctrlp_custom_ignore = '\v[\/]coverage$'
 
   " vim-rspec configuration
-  nmap <silent> <D-R> :call RunCurrentSpecFile()<CR>
-  nmap <silent> <D-L> :call RunNearestSpec()<CR>
-  let g:rspec_command = "Dispatch rspec {spec}"
+  "nmap <silent> <D-R> :call RunCurrentSpecFile()<CR>
+  "nmap <silent> <D-L> :call RunNearestSpec()<CR>
+  map <Leader>t :call RunCurrentSpecFile()<CR>
+  map <Leader>s :call RunNearestSpec()<CR>
+  let g:rspec_command = "Dispatch spring rspec {spec}"
 
   " completion configuration
   let g:ycm_complete_in_comments = 1
@@ -185,6 +197,14 @@ fun! vim_addon_luxflux#Activate()
   noremap <D-7> :buffer 7<CR>
   noremap <D-8> :buffer 8<CR>
   noremap <D-9> :buffer 9<CR>
+
+  " easytags configuration
+  set tags='./.git/tags'
+  let g:easytags_dynamic_files = 1
+  let g:easytags_events = ['BufWritePost']
+
+  " tagbar configuration
+  "autocmd VimEnter * TagbarToggle
 
   if has("autocmd")
 
